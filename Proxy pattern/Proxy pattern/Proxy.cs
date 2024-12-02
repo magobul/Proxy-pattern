@@ -21,13 +21,13 @@ namespace Proxy_pattern
 
         public string Request(string request)
         {
-            // Проверка прав доступа (пример)
+            
             if (!HasAccess())
             {
                 return "Доступ запрещен.";
             }
 
-            // Проверка кэша
+            
             if (_cache.ContainsKey(request) &&
                 (DateTime.Now - _cache[request].timestamp) < _cacheDuration)
             {
